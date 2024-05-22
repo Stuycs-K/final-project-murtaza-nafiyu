@@ -2,21 +2,6 @@
 
 ## GROUP MEMBER 1
 
-### date x
+### 05/22/24
 
-info
-
-### date y
-
-info
-
-
-## GROUP MEMBER 2
-
-### date x
-
-info
-
-### date y
-
-info
+test
