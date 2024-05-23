@@ -1,6 +1,6 @@
 # Work Log
 
-## GROUP MEMBER 1
+## GROUP MEMBER 1 (NAF)
 
 ### 05/22/24
 
