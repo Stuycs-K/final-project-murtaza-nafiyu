@@ -1,6 +1,6 @@
 int dx = 0, dy = 0, x, y;
 PACMAN test = new PACMAN(3);
-
+//test
 void draw(){
   background(255,255,255);
   test.move();
