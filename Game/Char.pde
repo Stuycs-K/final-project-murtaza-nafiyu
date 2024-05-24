@@ -9,8 +9,10 @@ class Char{
     type = t;
   }
   void move(){
-    x += dx;
-    y += dy;
+    if (!(x + dx > width) && !(x + dx < 0) && !(y + dy > height) && !(y + dy < 0)){
+          x += dx;
+          y += dy;
+    }
     if (type.equals("PACMAN")){
       ellipse(x, y, 10, 10);
     }
