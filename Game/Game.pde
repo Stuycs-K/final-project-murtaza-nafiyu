@@ -3,6 +3,10 @@ PACMAN test = new PACMAN(3);
 //test
 void draw(){
   background(255,255,255);
+  stroke(75, 0, 130);
+  strokeWeight(3);
+  line(120, 80, 120, 300);
+  line(120, 80, 0, 80);
   test.move();
 }
 void setup(){
