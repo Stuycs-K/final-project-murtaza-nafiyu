@@ -9,7 +9,7 @@ class Char{
     type = t;
   }
   void move(){
-    if (!(x + dx > width) && !(x + dx < 0) && !(y + dy > height) && !(y + dy < 0) && !(get(x + dx + 5, y) == color(75, 0, 130)) && !(get(x + dx - 5, y) == color(75, 0, 130))){
+    if (!(x + dx > width) && !(x + dx < 0) && !(y + dy > height) && !(y + dy < 0) && !(get(x + dx + 5, y) == color(75, 0, 130)) && !(get(x + dx - 5, y) == color(75, 0, 130)) && !(get(x, y + dy + 5) == color(75, 0, 130)) && !(get(x, y + dy - 5) == color(75, 0, 130))){
           x += dx;
           y += dy;
     }
