@@ -11,6 +11,13 @@ void draw(){
   background(0, 0, 0);
   stroke(75, 0, 130);
   strokeWeight(3);
+  //building the maze!
+  line(width/2 - 40, height/2 - 30, width/2 - 40, height/2 + 30);
+  line(width/2 + 40, height/2 - 30, width/2 + 40, height/2 + 30);
+  line(width/2 + 40, height/2 + 30, width/2 - 40, height/2 + 30);
+  line(width/2 + 40, height/2 - 30, width/2 + 15, height/2 - 30);
+  line(width/2 - 40, height/2 - 30, width/2 - 15, height/2 - 30);
+  line(width/2 + 40, height/2 + 55, width/2 - 40, height/2 + 55);
   line(10, 10, 10, height - 10);
   line(width - 10, 10, width - 10, height - 10);
   line(10, 10, width - 10, 10);
@@ -19,6 +26,7 @@ void draw(){
   line(100, 100, 200, 100);
   line(75, 75, 75, 200);
   line(75, 75, 200, 75);
+  // the game itself
   playStartUp();
   pac.move();
   for (int i = 0; i < 4; i++){

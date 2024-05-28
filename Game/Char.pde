@@ -15,22 +15,18 @@ class Char{
   void move(){
     //VER 2 (STUCK ON EDGES, ask MR. K maybe?)
     if (type.equals("PACMAN")){
-      if (!(x + dx > width) && !(x + dx < 0) && !(get(x + dx + 10, y) == color(75, 0, 130)) && !(get(x + dx - 10, y) == color(75, 0, 130))){
-        if (!(get(x + dx + 10, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 10) == color(75, 0, 130))){
-          x += dx; //this can be condensed into one huge if statement
-        }
+      if (!(x + dx > width) && !(x + dx < 0) && !(get(x + dx + 10, y) == color(75, 0, 130)) && !(get(x + dx - 10, y) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 10) == color(75, 0, 130))){
+        x += dx;
       }
-      if (!(y + dy > height) && !(y + dy < 0) && !(get(x, y + dy + 10) == color(75, 0, 130)) && !(get(x, y + dy - 10) == color(75, 0, 130)) && !(get(x, y + dy + 5) == color(75, 0, 130)) && !(get(x, y + dy - 5) == color(75, 0, 130)) && !(get(x, y + dy + 3) == color(75, 0, 130)) && !(get(x, y + dy - 3) == color(75, 0, 130))){
-        if (!(get(x + dx + 10, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 10) == color(75, 0, 130))){
-          y += dy; //this can be condensed into one huge if statement
-        }
+      if (!(y + dy > height) && !(y + dy < 0) && !(get(x, y + dy + 10) == color(75, 0, 130)) && !(get(x, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 10) == color(75, 0, 130))){
+        y += dy;
       }
     }
     if (type.equals("GHOST")){
-      if (!(x + dx > width) && !(x + dx < 0) && !(get(x + dx + 20, y) == color(75, 0, 130)) && !(get(x + dx - 20, y) == color(75, 0, 130))){
+      if (!(x + dx > width) && !(x + dx < 0) && !(get(x + dx + 20, y) == color(75, 0, 130)) && !(get(x + dx - 20, y) == color(75, 0, 130)) && !(get(x + dx + 20, y + dy + 20) == color(75, 0, 130)) && !(get(x + dx - 20, y + dy - 20) == color(75, 0, 130))){
         x += dx;
       }
-      if (!(y + dy > height) && !(y + dy < 0) && !(get(x, y + dy + 20) == color(75, 0, 130)) && !(get(x, y + dy - 20) == color(75, 0, 130)) && !(get(x, y + dy + 5) == color(75, 0, 130)) && !(get(x, y + dy - 5) == color(75, 0, 130)) && !(get(x, y + dy + 3) == color(75, 0, 130)) && !(get(x, y + dy - 3) == color(75, 0, 130))){
+      if (!(y + dy > height) && !(y + dy < 0) && !(get(x, y + dy + 20) == color(75, 0, 130)) && !(get(x, y + dy - 20) == color(75, 0, 130)) && !(get(x + dx + 20, y + dy + 20) == color(75, 0, 130)) && !(get(x + dx - 20, y + dy - 20) == color(75, 0, 130))){
         y += dy;
       }
     }
