@@ -8,13 +8,17 @@ GHOST ghost4 = new GHOST();
 GHOST[] ghosts = new GHOST[]{ghost1, ghost2, ghost3, ghost4};
 //test
 void draw(){
-  background(255,255,255);
+  background(0, 0, 0);
   stroke(75, 0, 130);
   strokeWeight(3);
   line(10, 10, 10, height - 10);
   line(width - 10, 10, width - 10, height - 10);
   line(10, 10, width - 10, 10);
   line(10, height - 10, width - 10, height - 10);
+  line(100, 100, 100, 200);
+  line(100, 100, 200, 100);
+  line(75, 75, 75, 200);
+  line(75, 75, 200, 75);
   playStartUp();
   pac.move();
   for (int i = 0; i < 4; i++){
