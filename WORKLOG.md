@@ -26,3 +26,6 @@ I continued on trying to diagnose the problem from yesterday, however all soluti
 
 I decided to stop on the wall detection for now and start on the ghosts. The ghosts are just squares for now. I created random Ghost AI that changes direction after a tick counter is reached, and I additionally created a way for PAC-MAN to die upon contact with the ghosts. Finally, I created a start-up screen (It's just the objects staying paused for a few seconds) that plays whenever PAC-MAN dies, just like the real game. It also plays upon the first launch.
 
+### 05/28/24
+
+It has not been fun. I've found a way to detect walls from 45 degree diagonals from PAC-MAN as well as the four cardinal directions, however the places in-between are still not checked so with proper timing PAC-MAN can still accidentally get stuck on walls. I don't know how I'm going to tackle this so I may ask for help tommorow. This probably can be done with the help of trigonometry but at the current moment I don't know what I can do. I decided to spend the rest of the day doing research. Other than that, I started a little on building the maze walls and the ghost spawn. I do not plan on expanding the ghost walls until I get wall collision checks fixed.
