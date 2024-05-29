@@ -17,15 +17,18 @@ void draw(){
   line(width/2 + 40, height/2 + 30, width/2 - 40, height/2 + 30);
   line(width/2 + 40, height/2 - 30, width/2 + 15, height/2 - 30);
   line(width/2 - 40, height/2 - 30, width/2 - 15, height/2 - 30);
-  line(width/2 + 40, height/2 + 55, width/2 - 40, height/2 + 55);
+  line(width/2 + 40, height/2 + 60, width/2 - 40, height/2 + 60);
+  line(width/2, height/2 + 60, width/2, height/2 + 90);
+  line(width/2 + 40, height/2 + 120, width/2 - 40, height/2 + 120);
+  line(width/2, height/2 + 120, width/2, height/2 + 150);
+  line(width/2 + 40, height/2 - 90, width/2 - 40, height/2 - 90);
+  line(width/2, height/2 - 90, width/2, height/2 - 60);
+  line(width/2 - 70, height/2 - 90, width/2 - 70, height/2);
+  line(width/2 - 70, height/2 - 60, width/2 - 30, height/2 - 60);
   line(10, 10, 10, height - 10);
   line(width - 10, 10, width - 10, height - 10);
   line(10, 10, width - 10, 10);
   line(10, height - 10, width - 10, height - 10);
-  line(100, 100, 100, 200);
-  line(100, 100, 200, 100);
-  line(75, 75, 75, 200);
-  line(75, 75, 200, 75);
   // the game itself
   playStartUp();
   pac.move();
