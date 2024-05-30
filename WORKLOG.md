@@ -29,3 +29,7 @@ I decided to stop on the wall detection for now and start on the ghosts. The gho
 ### 05/28/24
 
 It has not been fun. I've found a way to detect walls from 45 degree diagonals from PAC-MAN as well as the four cardinal directions, however the places in-between are still not checked so with proper timing PAC-MAN can still accidentally get stuck on walls. I don't know how I'm going to tackle this so I may ask for help tommorow. This probably can be done with the help of trigonometry but at the current moment I don't know what I can do. I decided to spend the rest of the day doing research. Other than that, I started a little on building the maze walls and the ghost spawn. I do not plan on expanding the ghost walls until I get wall collision checks fixed.
+
+## 05/29/24
+
+I found a basic workaround for the wall detection, and stuck to it for now. I've spent too much time on detecting walls. I built the maze for the remainder of today.
