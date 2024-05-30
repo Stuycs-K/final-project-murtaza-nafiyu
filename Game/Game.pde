@@ -1,11 +1,16 @@
 int dx = 0, dy = 0, x, y, startUpCounter = 0;
 boolean startUp = false;
 PACMAN pac = new PACMAN(3, width/2, height/2);
-GHOST ghost1 = new GHOST();
-GHOST ghost2 = new GHOST();
-GHOST ghost3 = new GHOST();
-GHOST ghost4 = new GHOST();
+GHOST ghost1 = new GHOST(50, 50);
+GHOST ghost2 = new GHOST(50, 50);
+GHOST ghost3 = new GHOST(50, 50);
+GHOST ghost4 = new GHOST(50, 50);
 GHOST[] ghosts = new GHOST[]{ghost1, ghost2, ghost3, ghost4};
+//building the PACDOTS.
+PacDot PD1 = new PacDot("PACDOT", 100, 100);
+PacDot PP1 = new PacDot("POWERPELLET", 150, 150);
+PacDot[] dots = new PacDot[]{PD1};
+PacDot[] powers = new PacDot[]{PP1};
 //test
 void draw(){
   background(0, 0, 0);
@@ -32,7 +37,13 @@ void draw(){
   // the game itself
   playStartUp();
   pac.move();
+  for (int i = 0; i < dots.length; i++){
+    dots[i].updateStatus();
+  }
   for (int i = 0; i < 4; i++){
+    for (int j = 0; j < powers.length; j++){
+      ghosts[i].setGhostMode(powers[j].updateStatus());
+    }
     ghosts[i].move();
     if (!startUp){
       ghosts[i].startGhostAI();
@@ -62,8 +73,21 @@ void keyPressed(){
   }
 }
 void checkCollisions(){
+  for (int i = 0; i < dots.length; i++){
+    if (dist(dots[i].getXPos(), dots[i].getYPos(), pac.getXPos(), pac.getYPos()) <= 15){
+      dots[i].dotConsumed();
+    }
+  }
+  for (int i = 0; i < powers.length; i++){
+    if (dist(powers[i].getXPos(), powers[i].getYPos(), pac.getXPos(), pac.getYPos()) <= 15){
+      powers[i].dotConsumed();
+    }
+  }
   for (int i = 0; i < 4; i++){
     if (dist(ghosts[i].getXPos(), ghosts[i].getYPos(), pac.getXPos(), pac.getYPos()) <= 20){
+      if (ghosts[i].getMode()){
+        ghosts[i].killGhost();
+      }else{
        pac.killPac();
        pac.stopMovement();
        for (int j = 0; j < 4; j++){
@@ -71,6 +95,7 @@ void checkCollisions(){
          ghosts[j].stopMovement();
        }
        startUp = true;
+      }
     }
   }
 }

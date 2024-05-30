@@ -1,9 +1,12 @@
 class GHOST extends Char{
-  boolean eatMode;
-  boolean onCooldown = false;
-  int cooldownTime = 0;
-  GHOST(){
+  boolean eatMode, onCooldown;
+  int cooldownTime, x, y;
+  GHOST(int spawnX, int spawnY){
     super("GHOST");
+    cooldownTime = 0;
+    onCooldown = false;
+    x = spawnX;
+    y = spawnY;
   }
   boolean getMode(){
     return eatMode;
@@ -12,13 +15,29 @@ class GHOST extends Char{
     double RNG = Math.random();
     if (!onCooldown){
       if (RNG <= 0.25){
-        this.moveUp();        
+        if (eatMode){
+          this.moveUp("EAT");
+        }else{
+          this.moveUp(); 
+        }    
       }else if (RNG <= 0.5){
-        this.moveDown();
+        if (eatMode){
+          this.moveDown("EAT");
+        }else{
+          this.moveDown(); 
+        }    
       }else if (RNG <= 0.75){
-        this.moveRight();
+        if (eatMode){
+          this.moveLeft("EAT");
+        }else{
+          this.moveLeft(); 
+        }    
       }else{
-        this.moveLeft();
+        if (eatMode){
+          this.moveRight("EAT");
+        }else{
+          this.moveRight(); 
+        }    
       }
       onCooldown = true;
       cooldownTime = 0;
@@ -28,5 +47,11 @@ class GHOST extends Char{
         onCooldown = false;
       }
     }
+  }
+  void setGhostMode(boolean ghostMode){
+    eatMode = ghostMode;
+  }
+  void killGhost(){
+    this.moveTo(width/2, height/2);
   }
 }

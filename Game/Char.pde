@@ -55,20 +55,40 @@ class Char{
   }
   void moveUp(){
     storedDX = dx;
-    dy = -1;
+    dy = -2;
     dx = 0;
   }
   void moveDown(){
     storedDX = dx;
-    dy = 1;
+    dy = 2;
     dx = 0;
   }
   void moveLeft(){
     storedDY = dy;
-    dx = -1;
+    dx = -2;
     dy = 0;
   }
   void moveRight(){
+    storedDY = dy;
+    dx = 2;
+    dy = 0;
+  }
+  void moveUp(String ghostMove){
+    storedDX = dx;
+    dy = -1;
+    dx = 0;
+  }
+  void moveDown(String ghostMove){
+    storedDX = dx;
+    dy = 1;
+    dx = 0;
+  }
+  void moveLeft(String ghostMove){
+    storedDY = dy;
+    dx = -1;
+    dy = 0;
+  }
+  void moveRight(String ghostMove){
     storedDY = dy;
     dx = 1;
     dy = 0;
