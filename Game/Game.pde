@@ -51,6 +51,7 @@ void draw(){
     ghosts[i].move();
     if (!startUp){
       ghosts[i].startGhostAI();
+      ghosts[i].moveOutBarrier();
     }
   }
   checkCollisions();
@@ -95,8 +96,9 @@ void checkCollisions(){
        pac.killPac();
        pac.stopMovement();
        for (int j = 0; j < 4; j++){
-         ghosts[j].moveTo(width/2, height/2);
+         ghosts[j].moveTo(width/2 - 10, height/2);
          ghosts[j].stopMovement();
+         ghosts[j].setBarrierMove();
        }
        startUp = true;
       }
