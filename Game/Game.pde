@@ -30,6 +30,10 @@ void draw(){
   line(width/2, height/2 - 90, width/2, height/2 - 60);
   line(width/2 - 70, height/2 - 90, width/2 - 70, height/2);
   line(width/2 - 70, height/2 - 60, width/2 - 30, height/2 - 60);
+  line(width/2 + 70, height/2 - 90, width/2 + 70, height/2);
+  line(width/2 + 70, height/2 - 60, width/2 + 30, height/2 - 60);
+  //resizing maze may be required.
+  //borders
   line(10, 10, 10, height - 10);
   line(width - 10, 10, width - 10, height - 10);
   line(10, 10, width - 10, 10);
