@@ -17,5 +17,7 @@ Don't get touched by GHOSTs, or you will be sent back to the start and lose a li
 
 Cheats:
 [Z] - PAC-MAN automatically eats a POWER-PELLET (You are able to eat ghosts for a short while.)
+
 [X] - Freeze ghosts. (To make it easier to play.)
+
 [C] - Automatically win the game. (Currently, there is no win screen. So this just freezes your game.
