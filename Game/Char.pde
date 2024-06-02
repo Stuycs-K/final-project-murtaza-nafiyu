@@ -2,6 +2,7 @@ class Char{
   int x, y, dx, dy, storedDX, storedDY, ghostECount;
   String type;
   boolean ghostEntrance;
+  color ghostCol;
   Char(String t){
     x = 132;
     y = 100;
@@ -22,10 +23,10 @@ class Char{
         if (!(get(x + dx + 10, y + dy + 5) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 5) == color(75, 0, 130)) && !(get(x + dx + 5, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 5, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 5, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 5, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 5) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 5) == color(75, 0, 130))){
           if (!(get(x + dx + 10, y + dy + 3) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 3) == color(75, 0, 130)) && !(get(x + dx + 3, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 3, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 3, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 3, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 3) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 3) == color(75, 0, 130))){
             if (!(get(x + dx + 10, y + dy + 7) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 7) == color(75, 0, 130)) && !(get(x + dx + 7, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 7, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 7, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 7, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 7) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 7) == color(75, 0, 130))){
-              if (!(x + dx > width) && !(x + dx < 0) && !(get(x + dx + 10, y) == color(75, 0, 130)) && !(get(x + dx - 10, y) == color(75, 0, 130))){
+              if (!(get(x + dx + 10, y) == color(75, 0, 130)) && !(get(x + dx - 10, y) == color(75, 0, 130))){
                 x += dx;
               }
-              if (!(y + dy > height) && !(y + dy < 0) && !(get(x, y + dy + 10) == color(75, 0, 130)) && !(get(x, y + dy - 10) == color(75, 0, 130))){
+              if (!(get(x, y + dy + 10) == color(75, 0, 130)) && !(get(x, y + dy - 10) == color(75, 0, 130))){
                 y += dy;
               }
             }
@@ -45,14 +46,14 @@ class Char{
         }
       }else{
         //CHANGE THESE
-        if(!(get(x + dx + 10, y + dy + 20) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 10) == color(75, 0, 130))){
-          if (!(get(x + dx + 10, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 5) == color(75, 0, 130)) && !(get(x + dx + 5, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 5, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 5, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 5, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 5) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 5) == color(75, 0, 130))){
-            if (!(get(x + dx + 10, y + dy + 7) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 3) == color(75, 0, 130)) && !(get(x + dx + 3, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 3, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 3, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 3, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 3) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 3) == color(75, 0, 130))){
-              if (!(get(x + dx + 10, y + dy + 3) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 7) == color(75, 0, 130)) && !(get(x + dx + 7, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 7, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 7, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 7, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 7) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 7) == color(75, 0, 130))){
-                if (!(x + dx > width) && !(x + dx < 0) && !(get(x + dx + 10, y) == color(75, 0, 130)) && !(get(x + dx - 10, y) == color(75, 0, 130))){
+        if(!(get(x + dx + 10, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 10) == color(75, 0, 130))){
+          if (!(get(x + dx + 10, y + dy + 5) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 5) == color(75, 0, 130)) && !(get(x + dx + 5, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 5, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 5, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 5, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 5) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 5) == color(75, 0, 130))){
+            if (!(get(x + dx + 10, y + dy + 3) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 3) == color(75, 0, 130)) && !(get(x + dx + 3, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 3, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 3, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 3, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 3) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 3) == color(75, 0, 130))){
+              if (!(get(x + dx + 10, y + dy + 7) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy - 7) == color(75, 0, 130)) && !(get(x + dx + 7, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx - 7, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx + 7, y + dy - 10) == color(75, 0, 130)) && !(get(x + dx - 7, y + dy + 10) == color(75, 0, 130)) && !(get(x + dx + 10, y + dy - 7) == color(75, 0, 130)) && !(get(x + dx - 10, y + dy + 7) == color(75, 0, 130))){
+                if (!(get(x + dx + 10, y) == color(75, 0, 130)) && !(get(x + dx - 10, y) == color(75, 0, 130))){
                   x += dx;
                 }
-                if (!(y + dy > height) && !(y + dy < 0) && !(get(x, y + dy + 10) == color(75, 0, 130)) && !(get(x, y + dy - 10) == color(75, 0, 130))){
+                if (!(get(x, y + dy + 10) == color(75, 0, 130)) && !(get(x, y + dy - 10) == color(75, 0, 130))){
                   y += dy;
                 }
               }
@@ -68,11 +69,18 @@ class Char{
     //}
     stroke(0, 0, 0);
     strokeWeight(1);
+    if (x < 0){
+      x = width;
+    }else if (x > width){
+      x = 0;
+    }
     if (type.equals("PACMAN")){
       ellipse(x, y, 20, 20);
     }
     if (type.equals("GHOST")){
+      fill(ghostCol);
       square(x, y, 20);
+      fill(255, 255, 255);
     }
   }
   void moveUp(){
@@ -132,6 +140,13 @@ class Char{
   }
   int getYPos(){
     return y;
+  }
+  void ghostColUp(boolean eatMode){
+    if (eatMode){
+      ghostCol = color(0, 0, 255);
+    }else{
+      ghostCol = color(255, 255, 255);
+    }
   }
   void stopMovement(){
     dx = 0;

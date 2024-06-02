@@ -1,5 +1,5 @@
 class GHOST extends Char{
-  boolean eatMode, onCooldown, ghostBarrierMove;
+  boolean eatMode, onCooldown, ghostBarrierMove, edible, freeze;
   int cooldownTime, x, y, gBMCount;
   GHOST(int spawnX, int spawnY){
     super("GHOST");
@@ -9,12 +9,14 @@ class GHOST extends Char{
     y = spawnY;
     ghostBarrierMove = true;
     gBMCount = 0;
+    edible = false;
+    freeze = false;
   }
   boolean getMode(){
     return eatMode;
   }
   void startGhostAI(){
-    if (!ghostBarrierMove){
+    if (!ghostBarrierMove && !freeze){
       double RNG = Math.random();
       if (!onCooldown){
         if (RNG <= 0.25){ //modified for testing
@@ -53,10 +55,18 @@ class GHOST extends Char{
     }
   }
   void setGhostMode(boolean ghostMode){
-    eatMode = ghostMode;
+    if (edible){
+      eatMode = ghostMode;
+    }else{
+      eatMode = false;
+    }
+  }
+  void setFreeze(){
+    freeze = !freeze;
   }
   void killGhost(){
     this.moveTo(width/2 - 10, height/2);
+    edible = false;
     setBarrierMove();
   }
   void setBarrierMove(){
@@ -64,12 +74,18 @@ class GHOST extends Char{
   }
   void moveOutBarrier(){
     if (ghostBarrierMove){
-      if (gBMCount < 50){
+      if (gBMCount < 55){
         this.moveUp("BARRIER");
         gBMCount += 1;
       }else{
-        gBMCount = 0;
-        ghostBarrierMove = false; 
+        if (gBMCount < 100){     
+          this.moveLeft();
+          gBMCount += 1;
+        }else{
+          gBMCount = 0;
+          ghostBarrierMove = false;
+          edible = true;
+        }
       }
     }
   }
