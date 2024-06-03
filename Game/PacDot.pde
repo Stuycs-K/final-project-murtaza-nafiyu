@@ -19,7 +19,7 @@ class PacDot{
     }
     if (ghostEdible){
       ghostTimer += 1;
-      if (ghostTimer >= 500){
+      if (ghostTimer >= 1000){
         ghostEdible = false;
         ghostTimer = 0;
       }else{
@@ -30,7 +30,7 @@ class PacDot{
   }
   void dotConsumed(){
     eaten = true;
-    if(type.equals("POWERPELLET")){
+    if(type.equals("POWERPELLET") || type.equals("CHEAT")){
       ghostEdible = true;
     }
   }
@@ -39,5 +39,8 @@ class PacDot{
   }
   int getYPos(){
     return y;
+  }
+  boolean isEaten(){
+    return eaten;
   }
 }
