@@ -6,16 +6,9 @@ GHOST ghost2 = new GHOST(50, 50);
 GHOST ghost3 = new GHOST(50, 50);
 GHOST ghost4 = new GHOST(50, 50);
 GHOST[] ghosts = new GHOST[]{ghost1, ghost2, ghost3, ghost4};
-//building the PACDOTS.
-PacDot PD1 = new PacDot("PACDOT", 175, 305);
-PacDot PD2 = new PacDot("PACDOT", 145, 305);
-PacDot PD3 = new PacDot("PACDOT", 115, 305);
-PacDot PD4 = new PacDot("PACDOT", 200, 305);
-PacDot PD5 = new PacDot("PACDOT", 230, 305);
-PacDot PD6 = new PacDot("PACDOT", 260, 305);
+PacDot[] dots = new PacDot[11];
 PacDot CHEAT = new PacDot("CHEAT", 0, 0);
 PacDot PP1 = new PacDot("POWERPELLET", 200, 365);
-PacDot[] dots = new PacDot[]{PD1, PD2, PD3, PD4, PD5, PD6};
 PacDot[] powers = new PacDot[]{PP1};
 //test
 void draw(){
@@ -125,6 +118,19 @@ void draw(){
 void setup(){
   size(400, 400);
   startUp = true;
+  //build P-DOTS through MAZE.
+  //left: 5, right: 6
+  //loop each row with this same theme:
+  int lIndex = 55;
+  for (int i = 0; i < 6; i++){
+    dots[i] = new PacDot("PACDOT", lIndex, 305);
+    lIndex += 30;
+  }
+  int rIndex = 225;
+  for (int i = 6; i < 11; i++){
+    dots[i] = new PacDot("PACDOT", rIndex, 305);
+    rIndex += 30;
+  }
 }
 void keyPressed(){
   if (!startUp){
