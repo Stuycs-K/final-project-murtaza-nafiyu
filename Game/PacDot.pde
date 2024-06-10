@@ -19,7 +19,7 @@ class PacDot{
     }
     if (ghostEdible){
       ghostTimer += 1;
-      if (ghostTimer >= 1000){
+      if (ghostTimer >= 10000){
         ghostEdible = false;
         ghostTimer = 0;
       }else{

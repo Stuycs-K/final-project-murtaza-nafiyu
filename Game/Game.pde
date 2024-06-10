@@ -6,10 +6,14 @@ GHOST ghost2 = new GHOST(50, 50);
 GHOST ghost3 = new GHOST(50, 50);
 GHOST ghost4 = new GHOST(50, 50);
 GHOST[] ghosts = new GHOST[]{ghost1, ghost2, ghost3, ghost4};
-PacDot[] dots = new PacDot[11];
+PacDot[] dots = new PacDot[71];
 PacDot CHEAT = new PacDot("CHEAT", 0, 0);
 PacDot PP1 = new PacDot("POWERPELLET", 200, 365);
-PacDot[] powers = new PacDot[]{PP1};
+PacDot PP2 = new PacDot("POWERPELLET", 55, 305);
+PacDot PP3 = new PacDot("POWERPELLET", 345, 305);
+PacDot PP4 = new PacDot("POWERPELLET", 55, 70);
+PacDot PP5 = new PacDot("POWERPELLET", 345, 70);
+PacDot[] powers = new PacDot[]{PP1, PP2, PP3, PP4, PP5};
 //test
 void draw(){
   if (!winFreeze){
@@ -122,13 +126,73 @@ void setup(){
   //left: 5, right: 6
   //loop each row with this same theme:
   int lIndex = 55;
+  int rIndex = 225;
   for (int i = 0; i < 6; i++){
     dots[i] = new PacDot("PACDOT", lIndex, 305);
     lIndex += 30;
   }
-  int rIndex = 225;
   for (int i = 6; i < 11; i++){
     dots[i] = new PacDot("PACDOT", rIndex, 305);
+    rIndex += 30;
+  }
+  lIndex = 55;
+  rIndex = 225;
+  for (int i = 11; i < 16; i++){
+    dots[i] = new PacDot("PACDOT", lIndex, 275);
+    lIndex += 30;
+  }
+  for (int i = 16; i < 21; i++){
+    dots[i] = new PacDot("PACDOT", rIndex, 275);
+    rIndex += 30;
+  }
+  lIndex = 55;
+  rIndex = 225;
+  for (int i = 21; i < 26; i++){
+    dots[i] = new PacDot("PACDOT", lIndex, 335);
+    lIndex += 30;
+  }
+  for (int i = 26; i < 31; i++){
+    dots[i] = new PacDot("PACDOT", rIndex, 335);
+    rIndex += 30;
+  }
+  lIndex = 55;
+  rIndex = 225;
+  for (int i = 31; i < 36; i++){
+    dots[i] = new PacDot("PACDOT", lIndex, 365);
+    lIndex += 30;
+  }
+  for (int i = 36; i < 41; i++){
+    dots[i] = new PacDot("PACDOT", rIndex, 365);
+    rIndex += 30;
+  }
+  lIndex = 55;
+  rIndex = 225;
+  for (int i = 41; i < 46; i++){
+    dots[i] = new PacDot("PACDOT", lIndex, 125);
+    lIndex += 30;
+  }
+  for (int i = 46; i < 51; i++){
+    dots[i] = new PacDot("PACDOT", rIndex, 125);
+    rIndex += 30;
+  }
+  lIndex = 55;
+  rIndex = 225;
+  for (int i = 51; i < 56; i++){
+    dots[i] = new PacDot("PACDOT", lIndex, 92);
+    lIndex += 30;
+  }
+  for (int i = 56; i < 61; i++){
+    dots[i] = new PacDot("PACDOT", rIndex, 92);
+    rIndex += 30;
+  }
+  lIndex = 55;
+  rIndex = 225;
+  for (int i = 61; i < 66; i++){
+    dots[i] = new PacDot("PACDOT", lIndex, 45);
+    lIndex += 30;
+  }
+  for (int i = 66; i < 71; i++){
+    dots[i] = new PacDot("PACDOT", rIndex, 45);
     rIndex += 30;
   }
 }

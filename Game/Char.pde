@@ -75,6 +75,7 @@ class Char{
       x = 0;
     }
     if (type.equals("PACMAN")){
+      fill(255, 255, 0);
       ellipse(x, y, 20, 20);
     }
     if (type.equals("GHOST")){
@@ -145,7 +146,7 @@ class Char{
     if (eatMode){
       ghostCol = color(0, 0, 255);
     }else{
-      ghostCol = color(255, 255, 255);
+      ghostCol = color(125, 65, 72);
     }
   }
   void stopMovement(){
